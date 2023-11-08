@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;    
+    }                   
+    h1{
+    color:white;
+    background-color:tomato; 
+    text-align:center;  
+    }    
+    #math{
+    font-size:1.3em;     
+    }      
+    #questionno{
+    font-size:.8em;
+    text-align:right;
+    padding:0 1em;    
+    }   
+    #game{
+    font-size:.6em;     
+    }             
+    #second{
+    font-size:.6em; 
+    font-style:italic;        
+    }
+    #type{
+    text-align:center;
+    border:solid 0.2em tomato;
+    }
+    a:active{
+    text-decoration:none;
+    font-size:1.2em; 
+    color:black;
+    padding:0.3em;
+        
+    }
+    a:hover{
+    text-decoration:none;
+    font-size:1.2em; 
+    color:black;
+    padding:0.3em;  
+    
+    }
+    a:visited{
+    text-decoration:none;
+    font-size:1.2em; 
+    color:black;
+    padding:0.3em;
+    
+    }
+     a:link{
+    text-decoration:none;
+    font-size:1.2em; 
+    color:black;
+    padding:0.3em;
+    }
+    
+    #t{
+    color:tomato;    
+    }
+    
+    
+    
+    main{
+    border:solid .4em #003263f4;     
+    text-align:center;
+    padding-bottom:3em;
+    }    
+    ol{
+    text-align:left;   
+    padding-left:2em; 
+    margin:3em;      
+    }
+    li{
+    padding:.5em  .5em;    
+    }    
+    button{
+    background-color:#00136a;
+    color:white;
+    padding:.3em 1.3em;
+    font-size:1.3em;
+    border:solid  .1em #7b000f;
+    margin:2em;    
+    }        
+    #grid{
+    display:grid;
+    grid-template-columns:auto auto;                
+    }   
+    #rulebutton{    
+    background-color:white;
+    color:black;
+    padding:0 1em;
+    font-size:.8em;
+    border:solid  .25em #7b000f;
+    margin:0;
+    } 
+    #b{    
+    text-align:left;
+    }
+    #rulebox{
+    font-size:.9em;
+    color:#940d9f;
+    text-align:center;
+    border:solid  .2em  #7b000f;
+    padding:0 1em;    
+    }    
+    #info{
+    font-size:1.1em;
+    border:solid  .2em  #7b000f;
+    margin:0 1em;
+    color:#3a3d46;
+    }    
+    #comment{
+    border:solid gray 0.03em;
+    margin:1em;
+    border-radius:1em 3em;
+    font-size:1em;
+    padding:.3em; 
+    }
+                      
+@property --p{ syntax: '<number>'; inherits: true; initial-value: 60; }
+
+.pie { --w:10em; width:var(--w); aspect-ratio:1; position:relative; display:inline-grid; margin:5px; place-content:center; font-size:1.5em; font-weight:bold; font-family:sans-serif;
+
+
+ }
+ .pie:before, .pie:after { content:""; position:absolute; border-radius:50%; 
+border:solid .01em gray; }
+  .pie:before { inset:0; background: radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat, conic-gradient(var(--c) calc(var(--p)*1%),#0000 0); -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b))); mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b))); }
+   .pie:after { inset:calc(50% - var(--b)/2); background:var(--c); transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2)); }
+    .animate { animation:p 2s 1s both; } 
+     @keyframes p { from{--p:0} }
+      body { background:; }
+ </style>    
+</head>
+ <body>
+  <headder>   
+   <h1><span id="math">MATH</span><span id="game">GAME</span>
+   <br><span id="second">(second addition)</span></h1>  
+   <nav id="type">
+     <a id="a"href="mathgame 2.html">Algebra</a>
+     <a id="g" href="Index.html">Geometry</a>
+     <a id="t" href="sin.html">Trigonometry</a>
+     <br> 
+     <a id="p" href="probability.html">Probability</a>
+   <!--  <a id="s" href="">Statistics</a>  -->
+   </nav>                   
+  </headder>    
+  <main>
+      
+   <div id="grid"> 
+    <p id="b">
+     <button type="button" id="rulebutton" onclick="rule1()">Rule
+     </button>
+    </p>
+      
+    <p id="questionno"></p>
+   </div>
+   
+   <p id="rulebox"></p>   
+   
+   
+   
+   <div id="objective"></div>    
+   <div id="button">
+    <button type="submit" id="next" onclick="start()">Start
+    </button>
+   </div>         
+  </main>      
+  <footer>   
+      
+  </footer>          
+<script src="sin.js"></script>  
+    
+</body>
+
+</html>
